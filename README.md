@@ -31,13 +31,21 @@ totally fine.
 ## Questions
 * How can you change the ordering of the list? From ascending 
 to descending. Name at least two different methods.
-* Can the inner Node class be static? Justify your answer.
+- return Wert der compareTo Methode sollte minus sein oder der Wert muss bei der
+- insert Methode umgedreht werden
+* Can the inner Node class be static? 
+- Ja aber nur wenn sie innerhalb einer Klasse ist
 * Can you name the generic placeholder `Placeholder` instead of
 `T`? If yes should you, do it?
+- Mann kann den placeholder nennen wie man möchte sollte es jedoch nicht tun
 * Which benefits does this data structure have?
+- Typ casting wird nicht benötigt
+- Es können alle nicht primitiven Datentypen mit einer Klasse abgebildet werden
 * Which drawbacks does it have? Name a use case.
+- Man kann keine primitiven Datentypen verwenden
 * Will the following class compile? If not, why?
-
+- Nein weil z.B.: <, =, > Operatoren nur bei primitive Datentypen funktionieren und bei generics keine
+- primitive Datentypen angewendet werden können
 ~~~java
 public final class Algorithm {
     public static <T> T max(T x, T y) {
@@ -47,6 +55,9 @@ public final class Algorithm {
 ~~~
 
 * If the compiler erases all type parameters at compile time, why should you use generics?
+- Es wird bei compile Zeit eine engere Typkontrolle durchgeführt
+- Man kann sie als Parameter typ verwenden oder für Algorithmen
+
 * Consider this class:
 
 ~~~java
@@ -57,14 +68,22 @@ class Node<T> implements Comparable<T> {
 ~~~
 
 Will the following code compile? If not, why?
-
+-Ja es wird kompiliert
 ~~~java
 Node<String> node = new Node<>();
 Comparable<String> comp = node;
 ~~~
 
 * Write a generic method to exchange the positions of two different elements in an array
-
+~~~
+public class Change {
+    public void change(T[] arr, int i, int j){
+        T temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+}
+~~~
 ---
 > **NOTES:**
 Write readable and good code. Do not repeate yourself use final,
