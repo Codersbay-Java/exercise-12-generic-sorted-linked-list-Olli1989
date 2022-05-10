@@ -22,7 +22,8 @@ public class Main {
         animalList.insert(animal3);
         animalList.insert(animal4);
 
-        animalList.delete(3);
+        System.out.println(animalList.get(2));
+        animalList.delete(2);
         System.out.println(animalList);
 
         Gender gender1 = new Gender(true);
@@ -35,6 +36,7 @@ public class Main {
         genderList.insert(gender3);
         genderList.insert(gender4);
 
+        System.out.println(genderList.get(2));
         genderList.delete(2);
         System.out.println(genderList);
 
@@ -46,18 +48,9 @@ public class Main {
         personList.insert(person2);
         personList.insert(person3);
 
+        System.out.println(personList.get(2));
         personList.delete(2);
         System.out.println(personList);
-
-
-
-
-
-
-
-
-
-
 
     }
 }
